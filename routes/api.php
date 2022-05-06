@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BulkController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+Route::get('bulks',[BulkController::class,'index']);
+Route::get('bulks/{slug}',[BulkController::class,'show']);
+Route::post('bulks',[BulkController::class,'store']);
+Route::put('bulks/{slug}',[BulkController::class,'update']);
+Route::delete('bulks/{slug}',[BulkController::class,'delete']);

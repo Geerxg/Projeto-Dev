@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Bulk extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'slug',
+        'name'
+    ];
+
+    protected $table = 'bulks';
+    protected $keyType = 'string';
+    protected $primaryKey = 'slug';
+    public $incrementing = false;
+
 }
