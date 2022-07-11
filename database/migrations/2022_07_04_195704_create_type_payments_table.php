@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('type_payments', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string("name",45);
         });
     }
 

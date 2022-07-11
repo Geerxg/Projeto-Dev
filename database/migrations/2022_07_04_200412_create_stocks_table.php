@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
+            $table->integer("products_id");
+            $table->integer("stock_location_id");
+            $table->double("qtd");
+            $table->string("lote");
             $table->timestamps();
         });
     }
